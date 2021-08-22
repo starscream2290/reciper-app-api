@@ -67,9 +67,9 @@ class PrivateTagsAPITests(TestCase):
         tag = Tag.objects.create(user=self.user, name='Comfort Food')
         #new tags that assign to a authenticated user
 
-        respone = self.client.get(TAGS_URL)
+        responce = self.client.get(TAGS_URL)
         #only one tag to be return as authenticated to the user
 
-        self.assertEqual(respone.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(respone.data), 1)
-        self.assertEqual(respone.data[0]['name'], tag.name)
+        self.assertEqual(responce.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(responce.data), 1)
+        self.assertEqual(responce.data[0]['name'], tag.name)
